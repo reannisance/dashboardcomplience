@@ -75,10 +75,8 @@ if uploaded_file:
         df_output, payment_cols = hitung_kepatuhan(df_input.copy(), tahun_pajak)
 
         # FIX: Only apply .title().strip() to string columns, not datetime
-        df_output.columns = [
-            col_mapping.get(col, col).title().strip() if isinstance(col, str) else col
-            for col in df_output.columns
-        ]
+        df_output.columns = 
+           [col_mapping.get(col, col).title().strip() if isinstance(col_mapping.get(col, col), str) else col for col in df_output.columns]
 
         with st.sidebar:
             st.header("🔍 Filter Data")
